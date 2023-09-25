@@ -2,6 +2,41 @@ const { Schema, model, Types } = require('mongoose');
 //Using dayjs for time
 const dayjs = require('dayjs');
 
+//Reaction Schema
+const reactionSchema = new Schema(
+  {
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
+
+    reactionBody: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 1,
+      maxlength: 280,
+    },
+
+    username: {
+      type: String,
+      required: true,
+    },
+
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (createdAtVal) =>
+        dayjs(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+    },
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+  }
+);
+
 //Thought Schema
 const thoughtSchema = new Schema(
   {
@@ -37,41 +72,6 @@ const thoughtSchema = new Schema(
 thoughtSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
-
-//Reaction Schema
-const reactionSchema = new Schema(
-  {
-    reactionId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
-
-    reactionBody: {
-      type: String,
-      required: true,
-      trim: true,
-      minlength: 1,
-      maxlength: 280,
-    },
-
-    username: {
-      type: String,
-      required: true,
-    },
-
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (createdAtVal) =>
-        dayjs(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
-    },
-  },
-  {
-    toJSON: {
-      getters: true,
-    },
-  }
-);
 
 //Initializing thought model 
 const Thought = model("Thought", thoughtSchema);
