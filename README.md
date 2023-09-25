@@ -39,19 +39,31 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Routes
 Get All Users / Create a User
+
 `http://localhost:3001/api/users`
+
 Get Individual User by ID / Update User by ID / Delete User by ID
+
 `http://localhost:3001/api/users/:userid`
+
 Add Friend by User / Delete Friend by User 
+
 `http://localhost:3001/api/users/:userid/friends/:friendid`
 
 Get All Thoughts / Create New Thought
+
 `http://localhost:3001/api/thoughts`
+
 Get Individual Thought by ID / Update Thought by ID / Delete Thought by ID
+
 `http://localhost:3001/api/thoughts/:thoughtid`
+
 Create Reaction by Thought 
+
 `http://localhost:3001/api/thoughts/:thoughtid/reactions`
+
 Delete Reaction by Thought 
+
 `http://localhost:3001/api/thoughts/:thoughtid/reactions/:reactionid`
 
 ---
