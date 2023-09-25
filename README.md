@@ -1,5 +1,20 @@
 # 18 NoSQL: Social Network API
 
+<hr>
+
+## Description
+
+As coding student I'm trying to create a simple Social Network API that uses the NoSQL database to match the Acceptance Criteria listed in the task below. 
+
+This was built using Javascript, Node.js, Express.js, MongoDB, Mongoose, Dayjs and love.
+
+## Deployed on
+Walkthrough Video: https://drive.google.com/file/d/1s4M3devKcT36hpAASss-GfXiwfXx9NwQ/view?usp=sharing
+
+Repository: https://github.com/YJPuk/Social-Netwerk
+
+<hr>
+
 ## Your Task
 
 MongoDB is a popular choice for many social networks due to its speed with large amounts of data and flexibility with unstructured data. Over the last part of this course, you’ll use several of the technologies that social networking platforms use in their full-stack applications. Because the foundation of these applications is data, it’s important that you understand how to build and structure the API first.
